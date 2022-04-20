@@ -1,0 +1,2 @@
+module('Autoplay tests');function FakeClock(){var value=1;this.tick=function(duration){value+=duration;};this.Date=function(){this.getTime=function(){return value;}}}
+function change_timeout(autoplay,first,second,wait){var clock=new FakeClock();autoplay.stop();autoplay.play(first);clock.tick(wait);autoplay.pause();autoplay.play(second);}
